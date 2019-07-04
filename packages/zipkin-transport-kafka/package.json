@@ -6,18 +6,21 @@
   "scripts": {
     "build": "babel src -d lib",
     "test": "mocha --require ../../test/helper.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run snyk-protect; npm run build",
+    "snyk-protect": "snyk protect"
   },
   "author": "Openzipkin <openzipkin.alt@gmail.com>",
   "license": "Apache-2.0",
   "repository": "https://github.com/openzipkin/zipkin-js",
   "dependencies": {
-    "kafka-node": "^2.2.0"
+    "kafka-node": "^2.2.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "kafka-please": "^1.0.1",
     "mocha": "^3.2.0",
     "zipkin": "^0.9.0"
-  }
+  },
+  "snyk": true
 }
